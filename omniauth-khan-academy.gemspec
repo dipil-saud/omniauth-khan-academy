@@ -11,6 +11,10 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'omniauth', '~> 1.0'
   gem.add_runtime_dependency 'oauth'
   gem.add_runtime_dependency 'multi_json'
+  gem.add_runtime_dependency 'active_support'
+
+  gem.add_development_dependency 'rspec', '~> 2.7'
+  gem.add_development_dependency 'pry'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

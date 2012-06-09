@@ -2,6 +2,9 @@ require "multi_json"
 require "omniauth"
 require "oauth"
 
+# for Hash#to_query
+require "active_support/core_ext"
+
 module OmniAuth
   module Strategies
 
@@ -16,10 +19,10 @@ module OmniAuth
       option :client_options, {}
 
       DEFAULT_CLIENT_OPTIONS = {
-        http_method: :get,
-        site: "http://www.khanacademy.org",
-        request_token_path: "/api/auth/request_token",
-        access_token_path: "/api/auth/access_token"
+        "http_method" => :get,
+        "site" => "http://www.khanacademy.org",
+        "request_token_path" => "/api/auth/request_token",
+        "access_token_path" => "/api/auth/access_token"
       }
 
       attr_reader :access_token
@@ -75,6 +78,9 @@ module OmniAuth
         }
       end
 
+      def client_options
+        DEFAULT_CLIENT_OPTIONS.merge(options.client_options || {})
+      end
 
       def callback_url
         options.callback_url || super
@@ -82,7 +88,7 @@ module OmniAuth
 
 
       def consumer
-        @consumer ||= ::OAuth::Consumer.new(options.consumer_key, options.consumer_secret, DEFAULT_CLIENT_OPTIONS.merge(options.client_options))
+        @consumer ||= ::OAuth::Consumer.new(options.consumer_key, options.consumer_secret, client_options)
       end
 
 
