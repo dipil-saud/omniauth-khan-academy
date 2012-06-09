@@ -1,6 +1,6 @@
-# Omniauth::Khan::Academy
+# OmniAuth KhanAcademy
 
-TODO: Write a gem description
+This is an [OmniAuth 1.0](https://github.com/intridea/omniauth) strategy for authenticating to KhanAcademy.
 
 ## Installation
 
@@ -18,7 +18,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Register[http://www.khanacademy.org/api-apps/register] your app at KhanAcademy and get your consumer token and secret.
+
+
+In a Rack application:
+
+```ruby
+use OmniAuth::Builder do
+  provider :khan_academy, CONSUMER_TOKEN, CONSUMER_SECRET
+end
+```
+
+For Rails, put this in your omniauth configuration file:
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :khan_academy, CONSUMER_TOKEN, CONSUMER_SECRET
+end
+```
+
+Restart the server and visit "*/auth/khanacademy" to try it out.
+
+The default callback is routed to "*/auth/khanacademy/callback" but you can override it as shown:
+
+    provider :khan_academy, CONSUMER_TOKEN, CONSUMER_SECRET, callback_url: "my_callback_url"
+    
+## Author
+
+[Dipil Saud (@dipil-saud)](https://github.com/dipil-saud)
 
 ## Contributing
 
