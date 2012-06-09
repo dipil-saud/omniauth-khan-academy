@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["dipil.saud@gmail.com"]
   gem.description   = %q{A KhanAcademy OAuth strategy for OmniAuth 1.0}
   gem.summary       = %q{A KhanAcademy OAuth strategy for OmniAuth 1.0}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/dipil-saud/omniauth-khan-academy"
 
   gem.add_runtime_dependency 'omniauth', '~> 1.0'
   gem.add_runtime_dependency 'oauth'
