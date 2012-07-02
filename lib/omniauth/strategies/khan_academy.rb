@@ -10,6 +10,7 @@ module OmniAuth
 
     class KhanAcademy
       include OmniAuth::Strategy
+      option :name, "khan_academy"
 
       args [:consumer_key, :consumer_secret]
 
