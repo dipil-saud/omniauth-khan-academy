@@ -37,12 +37,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-Restart the server and visit "*/auth/khanacademy" to try it out.
+Restart the server and visit "*/auth/khan_academy" to try it out.
 
-The default callback is routed to "*/auth/khanacademy/callback" but you can override it as shown:
+The default callback is routed to "*/auth/khan_academy/callback" but you can override it as shown:
 
     provider :khan_academy, CONSUMER_TOKEN, CONSUMER_SECRET, callback_url: "my_callback_url"
-    
+
 ## Author
 
 [Dipil Saud (@dipil-saud)](https://github.com/dipil-saud)
