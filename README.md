@@ -1,6 +1,6 @@
-# OmniAuth KhanAcademy
+# OmniAuth Khan Academy
 
-This is an [OmniAuth 1.0](https://github.com/intridea/omniauth) strategy for authenticating to KhanAcademy.
+This is an [OmniAuth 1.0](https://github.com/intridea/omniauth) strategy for authenticating to Khan Academy.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Register[http://www.khanacademy.org/api-apps/register] your app at KhanAcademy and get your consumer token and secret.
+Register[http://www.khanacademy.org/api-apps/register] your app at Khan Academy and get your consumer token and secret.
 
 
 In a Rack application:
